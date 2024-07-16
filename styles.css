@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+/* Variables de colores */
+:root {
+  --color-fondo: #263238; /* Fondo principal */
+  --color-primario: #768488; /* Color primario */
+  --color-secundario: #84ffff; /* Color secundario */
+  --color-acento: #84ffff; /* Color de acento */
+  --color-texto: #768488; /* Color del texto */
+  --color-blanco: #ffffff; /* Blanco para contraste */
+}
+
+/* Estilos generales */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Estilos del encabezado */
+header {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 10px 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo h1,
+header .logo p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: var(--color-texto);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Sección Sobre mí */
+#sobre-mi {
+  text-align: center;
+  padding: 300px 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  #sobre-mi {
+    text-align: center;
+    padding: 50px 0 50px;
+  }
+}
+
+#sobre-mi .imagen-personal {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+#sobre-mi .resumen-sobre-mi {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sección Proyectos */
+.proyecto-container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#proyectos {
+  padding: 50px 0;
+  height: auto;
+}
+
+.proyecto {
+  background-color: var(--color-primario);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 25% cover 50%;
+  animation-fill-mode: both;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+.proyecto:hover {
+  transform: scale(1.05);
+}
+
+.proyecto-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+  padding: 0 2rem;
+}
+
+.proyecto-header div {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.proyecto-header h3 {
+  margin: 0;
+}
+
+.proyecto-header a {
+  color: var(--color-fondo);
+  text-decoration: none;
+}
+
+.descripcion-proyecto {
+  color: var(--color-fondo);
+  padding: 0 2rem;
+}
+
+.imagen-proyecto {
+  width: 100%;
+  display: block;
+}
+
+.tecnologias-proyecto {
+  display: flex;
+  justify-content: end;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+}
+
+.tecnologias-proyecto span {
+  margin: -10px;
+  font-size: 1.6rem;
+}
+
+/* Sección Contacto */
+#contacto {
+  padding: 50px 0;
+  text-align: center;
+}
+
+#contacto h2 {
+  margin-bottom: 20px;
+}
+
+.contacto-redes a {
+  margin: 0 10px;
+  display: inline-block;
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+.contacto-redes a img {
+  width: 30px;
+  height: 30px;
+}
